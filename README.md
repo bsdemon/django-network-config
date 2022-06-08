@@ -19,3 +19,6 @@
 - docker image build -t python-http-server-alpine .
 
 - ./start_dumy_devices.sh
+
+## Notes for dev env
+- Set env var PYTHONDEVMODE=1 (it includes PYTHONASYNCIODEBUG=1)
