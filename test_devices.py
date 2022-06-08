@@ -25,8 +25,8 @@ async def check_device():
         # responses = await asyncio.gather(*tasks)
         # ------------------------------
         tasks = [make_single_task(session, port) for port in ports]
-        responses = await asyncio.gather(*tasks)
-        print(responses)
+        await asyncio.gather(*tasks)
+        # print(responses)
 
 # asyncio.run(check_device(ports))
 
