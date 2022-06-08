@@ -1,5 +1,6 @@
 # Build project
 
+- Python 3.10 is reuired
 ## Clone project
 
 - git clone <_repository_>
@@ -8,9 +9,11 @@
 
 ## Set up virtual environment
 
-- python3 -m venv .
+- pip install virtualenv
 
-- source bin/activate
+- virtualenv -p /usr/bin/python3.10 DjangoNetConf_venv
+
+- source DjangoNetConf_venv/bin/activate
 
 - pip install -r requirements.txt
 
