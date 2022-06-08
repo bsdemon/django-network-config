@@ -15,7 +15,7 @@ echo '==============================================='
 echo 'Starting new containers ...'
 echo '==============================================='
 echo ''
-for i in {8000..8050}
+for i in {8001..8050}
 do
     docker run -d -p $i:8008 -it python-http-server-alpine
 done
