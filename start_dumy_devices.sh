@@ -12,10 +12,16 @@ echo ''
 docker image build -t python-http-server-alpine .
 
 echo '==============================================='
+echo 'Running docker network ...'
+echo '==============================================='
+echo ''
+docker network create --subnet=10.10.1.0/24 --ip-range=10.10.1.0/24 --gateway=10.10.1.1 django_test_network
+
+echo '==============================================='
 echo 'Starting new containers ...'
 echo '==============================================='
 echo ''
-for i in {8001..8050}
+for IP in 10.10.1.{2..254}
 do
-    docker run -d -p $i:8008 -it python-http-server-alpine
+    docker run --network=django_test_network -tdi --ip $IP python-http-server-alpine
 done
