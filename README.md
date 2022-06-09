@@ -1,6 +1,6 @@
 # Build project
 
-- Python 3.10 is reuired
+- Python 3.10 is required
 
 ## Clone project
 
@@ -14,13 +14,11 @@
 
 - virtualenv -p /usr/bin/python3.10 venv
 
-- source DjangoNetConf_venv/bin/activate
+- source venv/bin/activate
 
 - pip install -r requirements.txt
 
 ## Build docker image
-
-- docker image build -t python-http-server-alpine .
 
 - ./start_dumy_devices.sh
 
