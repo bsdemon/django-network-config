@@ -1,6 +1,7 @@
 # Build project
 
 - Python 3.10 is reuired
+
 ## Clone project
 
 - git clone <_repository_>
@@ -11,7 +12,7 @@
 
 - pip install virtualenv
 
-- virtualenv -p /usr/bin/python3.10 DjangoNetConf_venv
+- virtualenv -p /usr/bin/python3.10 venv
 
 - source DjangoNetConf_venv/bin/activate
 
@@ -24,4 +25,5 @@
 - ./start_dumy_devices.sh
 
 ## Notes for dev env
+
 - Set env var PYTHONDEVMODE=1 (it includes PYTHONASYNCIODEBUG=1)
