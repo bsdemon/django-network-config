@@ -1,4 +1,3 @@
-from email import message
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 import random
@@ -14,18 +13,16 @@ class Server(BaseHTTPRequestHandler):
     def do_HEAD(self):
         self._set_headers()
         
-    # GET return JSON
     def do_GET(self):
         self.respond('GET')
     
-    # POST return JSON
     def do_POST(self):
         self.respond('POST')
 
     def respond(self, arg0):
-        delay = random.randint(1,20)
+        delay = random.randint(1,3)
         time.sleep(delay)
-        json_msg = json.dumps({'Status': 'OK', 'Methond': arg0})
+        json_msg = json.dumps({'Status': 'Ok', 'Methond': arg0, 'Delay': delay})
         self._set_headers()
         self.wfile.write(bytes(json_msg, encoding='utf8'))
         
