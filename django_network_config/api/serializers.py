@@ -13,7 +13,7 @@ class DeviceSerializer(serializers.ModelSerializer):
 
 
 class TaskSerializer(serializers.ModelSerializer):
-    status = serializers.CharField(source='get_status_display')
+    status = serializers.CharField(source='get_status_display', required=False)
 
     class Meta:
         model = Task
