@@ -13,7 +13,6 @@ import os
 from pathlib import Path
 
 import environ
-from pexpect import TIMEOUT
 env = environ.Env()
 environ.Env.read_env()
 
