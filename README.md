@@ -5,19 +5,23 @@
 
 ## Clone project
 
-git clone <_repository_>
+```git clone https://github.com/bsdemon/django-network-config.git```
 
 cd <_repository_folder_>
 
 ## Set up virtual environment
 
-pip install virtualenv
+```pip install virtualenv```
 
-virtualenv -p /usr/bin/python3.10 venv
+```virtualenv -p /usr/bin/python3.10 venv```
 
-source venv/bin/activate
+## Activate virtual environment
 
-pip install -r requirements.txt
+```source venv/bin/activate```
+
+## Install requirements
+
+```pip install -r requirements.txt```
 
 ## .env file
 
@@ -33,6 +37,15 @@ REDIS_DB=1
 REDIS_CHANNEL='django_network_config'
 REDIS_Q_CHANNEL='task_Q'
 ```
+## run Django server and migrations 
+
+```cd django_network_config```
+```python ./manage.py migrate```
+```python ./manage.py runserver```
+
+## in separate terminal with activated virtualenv run
+
+```python ./manage.py dispatch_config```
 
 ## Build and start docker dummy devices
 
