@@ -19,6 +19,21 @@ source venv/bin/activate
 
 pip install -r requirements.txt
 
+## .env file
+
+- Add `.env` file in `settings.py` directory.
+
+```# Django settings
+SECRET_KEY='django-insecure-jlh9$s&5(695xdw=yawx*#f4a1apnu4+o$@5&b1^%*f_&9mcd$'
+
+# Redis settings
+REDIS_HOST='localhost'
+REDIS_PORT=6379
+REDIS_DB=1
+REDIS_CHANNEL='django_network_config'
+REDIS_Q_CHANNEL='task_Q'
+```
+
 ## Build and start docker dummy devices
 
 - ./start_dumy_devices.sh
