@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Details in admin panel</h3>
+
+<h3>Simple tasks list</h3>
+
+<ol>
+    {% for task in task_list %}
+        {% if task.id %}
+        <li>
+            <!-- <a href="{{ task.get_absolute_url }}">
+                {{ task.id }}
+            </a> -->
+            <span> {{task.id}} </span>
+            <span> - {{task.get_status_display}}</span>
+            <span> - {{task.timespan}}</span>
+            <span> - {{task.updated}}</span>
+            <span> - {{task.device}}</span>
+        </li>
+        {% endif %}
+    {% endfor %}
+</ol>
+{% endblock content %}
