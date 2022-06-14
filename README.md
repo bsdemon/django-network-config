@@ -1,0 +1,47 @@
+# Build project
+
+- Python 3.10 is required
+- Redis > 5.0.0
+
+## Clone project
+
+git clone <_repository_>
+
+cd <_repository_folder_>
+
+## Set up virtual environment
+
+pip install virtualenv
+
+virtualenv -p /usr/bin/python3.10 venv
+
+source venv/bin/activate
+
+pip install -r requirements.txt
+
+## .env file
+
+- Add `.env` file in `settings.py` directory.
+
+```# Django settings
+SECRET_KEY='django-insecure-jlh9$s&5(695xdw=yawx*#f4a1apnu4+o$@5&b1^%*f_&9mcd$'
+
+# Redis settings
+REDIS_HOST='localhost'
+REDIS_PORT=6379
+REDIS_DB=1
+REDIS_CHANNEL='django_network_config'
+REDIS_Q_CHANNEL='task_Q'
+```
+
+## Build and start docker dummy devices
+
+- ./start_dumy_devices.sh
+
+<!-- ## Start redis container
+
+docker run --name django-net-conf-redis -d redis
+
+## Enter to redis-cli to monitor
+
+docker exec -it django-net-conf-redis redis-cli -->
