@@ -15,7 +15,8 @@ class Command(BaseCommand):
             data = message.get('data', '').decode('utf8')
             json_data = json.loads(data)
             task_id = json_data['task_id']
-            ip = json_data['ip']
+            # ip = json_data['ip']
+            ip = json_data['hostname']
             port = json_data['port']
             conf = json_data['configuration']
             utils.add_task_to_queue(ip, port, conf, task_id)
