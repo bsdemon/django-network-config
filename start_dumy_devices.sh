@@ -21,7 +21,7 @@ echo '==============================================='
 echo 'Starting new containers ...'
 echo '==============================================='
 echo ''
-for IP in 10.10.10.{2..100}
+for IP in 10.10.10.{2..20}
 do
     docker run --network=django_test_network -tdi --ip $IP python-http-server-alpine
 done
