@@ -2,7 +2,7 @@ import asyncio
 import aiohttp
 from sanic import Sanic, response
 
-app = Sanic("Test Sanic ")
+app = Sanic("TestSanic")
 
 @app.route('/api/create_task', methods=['POST'])
 async def get_ressource(request):
@@ -11,7 +11,7 @@ async def get_ressource(request):
     asyncio.ensure_future(set_task(url))
 
 async def set_task(url):
-    conn = aiohttp.TCPConnector(verify_ssl=False)
+    conn = aiohttp.TCPConnector(ssl=False)
     async with aiohttp.ClientSession(connector=conn, trust_env=True) as session:
         async with session.post(url) as resp:
             result = await resp.text()

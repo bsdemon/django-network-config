@@ -8,7 +8,7 @@ echo ''
 # "10.10.10.5" "10.10.10.6" "10.10.10.7" "10.10.10.8" "10.10.10.9" "10.10.10.10" "10.10.10.11" "10.10.10.12")
 # for IP in "${ip_range[@]}"
 
-for IP in 10.10.10.{2..20}
+for IP in 10.10.10.{2,3,2}
 do
     curl -X POST -H "Content-Type: application/json" -d \
     '{"hostname": "'$IP'", "port": 8008, "ip": "'$IP'", "configuration": "configure terminal\ninterface xg0/0/1\nvlan 10 type tagged\nvlan 11 type tagged\nmac-address-learning disable\nmac-address static de:ad:00:be:ef:00:01\nsave\n" }' \

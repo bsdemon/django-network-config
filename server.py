@@ -1,3 +1,32 @@
+# from aiohttp import web
+# import os
+# import asyncio
+# import random
+# import logging
+
+# logging.basicConfig(
+#     format='%(asctime)s,%(msecs)d %(levelname)-8s [%(filename)s:%(lineno)d] %(message)s',
+#     datefmt='%d-%m-%Y:%H:%M:%S',
+#     level=logging.ERROR #change to DEBUG or INFO for debuging
+# )
+# logger = logging.getLogger()
+
+# async def handle(request):
+#     await asyncio.sleep(random.uniform(0, 0.1))
+#     return web.Response(text="Hi ")
+
+# async def init():
+#     app = web.Application()
+#     app.router.add_route('POST', '/', handle)
+#     return await loop.create_server(
+#         app.make_handler(), '0.0.0.0', 8008)
+
+# if __name__ == '__main__':
+
+#     loop = asyncio.get_event_loop()
+#     loop.run_until_complete(init())
+#     loop.run_forever()
+
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 import random
